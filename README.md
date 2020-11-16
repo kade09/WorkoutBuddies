@@ -83,8 +83,7 @@ WorkoutBuddies is a workout app that pairs similar-leveled users and creates a w
     * => Creation Screen
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="https://imgur.com/jdwlKNE" width=600>
+[Imgur](https://i.imgur.com/jdwlKNE.jpg)
 
 ### [BONUS] Digital Wireframes & Mockups
 
