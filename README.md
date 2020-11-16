@@ -101,7 +101,7 @@ WorkoutBuddies is a workout app that pairs similar-leveled users and creates a w
         * => New Event Screen
 
 ## Wireframes
-<img src="https://raw.githubusercontent.com/lmxtiger/Codepath-APP-2020-Fall/main/Image%20from%20iOS.jpg" width=600>
+<img src="https://raw.githubusercontent.com/lmxtiger/Codepath-APP-2020-Fall/main/Image%20from%20iOS.jpg" width=800>
 
 ### [BONUS] Digital Wireframes & Mockups
 
