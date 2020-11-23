@@ -108,9 +108,73 @@ WorkoutBuddies is a workout app that pairs similar-leveled users and creates a w
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+Workout Plan Schema
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the workout(default field) |
+   | author        | Pointer to User| creator of the workout |
+   | createdAt     | DateTime |date when routine is created (default field)|
+   | updatedAt     | DateTime  | date when routine is last updated (default field) |
+   | exercises     | Array of Integers |Exercises in each workout |
+
+Exercise Schema
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId | Int | Unique id for the exercise |
+   | name     | String |Name of exercise |
+  
+Full Exercise Schema
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   |exercise |Pointer to exercise | exercise |
+   |sets     |Int | Amount of sets |
+   |reps |Int |Amount of reps|
+   |workoutPlan | Pointer to workoutPlan |the corresponding workout plan|
+
+Additional User Information Schema
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | workoutLevel | Int |User’s level of expertise |
+   | buddies | Array of Users | User’s Buddies |
+   | upcomingRoutines | Array of Workouts | Upcoming workouts |
+   | createdRoutines | Array of Workouts | created workout routines|
+   | name | String| name of user|
+   | connected | Boolean | connected with user|
+
+Chat Message Schema
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | author | Pointer to User | person who posted|
+   | recipient | Pointer to another user | the recipient of the post|
+   | Post | String | the posted chat message|
+
 ### Models
-[Add table of models]
+* Home Screen
+    * (Read/Get) Query potential buddies of user
+    * (Create/Post) New Workout Plan
+* Suggestions Screen
+    * (Read/Get) Query potential buddies of user
+* Buddy's Details Screen
+    * (Read/Get) Query buddy's details
+* Create Plan Screen
+    * (Create/Post) New Workout Plan
+* Workout Plan Screen
+    * (Read/Get) Query workout plan details
+* Search Screen
+    * (Read/Get) Query potential buddies of user
+* Chat View Screen
+    * (Read/Get) Query connected buddies
+* Chat Screen
+    * (Read/Get) Query messaged buddy
+    * (Create/Post) New private message
+    * (Delete) Posted Message
+* User Profile Screen
+    * (Read/Get) User details
+    * (Create/Post) New Workout
+    * (Update) Connected buddies
+    * (Update) User Details
+    * (Update) Workout Plans
+    
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
