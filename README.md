@@ -116,6 +116,7 @@ Workout Plan Schema
    | createdAt     | DateTime |date when routine is created (default field)|
    | updatedAt     | DateTime  | date when routine is last updated (default field) |
    | exercises     | Array of Integers |Exercises in each workout |
+   | workoutLevel  | Int | Level of difficulty|
 
 Exercise Schema
 | Property      | Type     | Description |
@@ -149,6 +150,7 @@ Chat Message Schema
    | Post | String | the posted chat message|
 
 ### Models
+(All code snipets of parse requests are on the DbViewController.swift file)
 * Home Screen
     * (Read/Get) Query potential buddies of user
     * (Create/Post) New Workout Plan
