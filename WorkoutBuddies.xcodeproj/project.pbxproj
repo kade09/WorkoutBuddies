@@ -99,13 +99,13 @@
 		2664A6AD2562524900AB5C27 /* WorkoutBuddies */ = {
 			isa = PBXGroup;
 			children = (
-				2664A6AE2562524900AB5C27 /* AppDelegate.swift */,
-				2664A6B02562524900AB5C27 /* SceneDelegate.swift */,
-				2664A6B22562524900AB5C27 /* ViewController.swift */,
-				2664A6B42562524900AB5C27 /* Main.storyboard */,
+				E4E2821B256CAE0D008536EA /* Delegates */,
+				E4E2821C256CAE22008536EA /* ViewControllers */,
+				E4E2821D256CAE36008536EA /* Storyboards */,
+				E4E2821E256CAE6F008536EA /* Cells */,
 				2664A6B72562524B00AB5C27 /* Assets.xcassets */,
-				2664A6B92562524B00AB5C27 /* LaunchScreen.storyboard */,
 				2664A6BC2562524B00AB5C27 /* Info.plist */,
+				E4E2821F256CAEA5008536EA /* APICalls */,
 			);
 			path = WorkoutBuddies;
 			sourceTree = "<group>";
@@ -126,6 +126,46 @@
 				2664A6D22562524B00AB5C27 /* Info.plist */,
 			);
 			path = WorkoutBuddiesUITests;
+			sourceTree = "<group>";
+		};
+		E4E2821B256CAE0D008536EA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				2664A6AE2562524900AB5C27 /* AppDelegate.swift */,
+				2664A6B02562524900AB5C27 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		E4E2821C256CAE22008536EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2664A6B22562524900AB5C27 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E4E2821D256CAE36008536EA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2664A6B42562524900AB5C27 /* Main.storyboard */,
+				2664A6B92562524B00AB5C27 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E4E2821E256CAE6F008536EA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E4E2821F256CAEA5008536EA /* APICalls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APICalls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
