@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import Parse
 
 class RegistrationViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
