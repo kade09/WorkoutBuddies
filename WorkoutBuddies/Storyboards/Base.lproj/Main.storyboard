@@ -64,9 +64,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="3sY-qU-mVz" id="TMo-h3-tkt"/>
                         <outlet property="usernameTextField" destination="CYI-hx-MdG" id="HDn-HF-b7O"/>
-                        <segue destination="RW8-Lf-Vhm" kind="popoverPresentation" identifier="loginSegue" id="2UI-KZ-kfP">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="RW8-Lf-Vhm" kind="presentation" identifier="loginSegue" id="pKb-jU-li3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -183,6 +181,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vPr-ng-vtH"/>
+        <segue reference="pKb-jU-li3"/>
     </inferredMetricsTieBreakers>
 </document>

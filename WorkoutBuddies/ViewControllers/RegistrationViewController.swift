@@ -40,8 +40,8 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func onCreateAccount(_ sender: Any) {
-        let username = usernameTextfield.text!
-        let password = passwordTextfield.text!
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
         let name = nameTextField.text!
         
         let user = PFUser()
