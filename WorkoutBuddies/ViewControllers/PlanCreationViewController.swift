@@ -15,8 +15,13 @@ protocol ExerciseDelegate {
 
 class PlanCreationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ExerciseDelegate  {
 
+    @IBOutlet weak var workoutName: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var scheduleDatePicker: UIDatePicker!
+    
     var exercises = [[String]]()
+    var workoutLevel = ""
+    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,18 @@ class PlanCreationViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    @IBAction func chooseWorkoutLevel(_ sender: UIButton) {
+        dropDown.dataSource = ["Beginner", "Intermediate", "Advanced"]
+            dropDown.anchorView = sender
+            dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
+            dropDown.show()
+            dropDown.selectionAction = { [weak self] (index: Int, item: String) in
+                guard let _ = self else {return}
+                self!.workoutLevel = item
+            sender.setTitle(item, for: .normal)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,6 +87,9 @@ class PlanCreationViewController: UIViewController, UITableViewDelegate, UITable
         
         let routine = PFObject(className: "workoutPlan")
         routine["author"] = author
+        routine["workoutName"] = workoutName.text
+        routine["workoutLevel"] = workoutLevel
+        routine["scheduledDate"] = scheduleDatePicker.date
         tableView.reloadData()
         routine["exercises"] = exercises
         

@@ -8,14 +8,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("heeokfjewo")
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onCreatePlan(_ sender: Any) {
+        self.performSegue(withIdentifier: "onCreatePlan", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -71,20 +71,20 @@
             </objects>
             <point key="canvasLocation" x="139" y="114"/>
         </scene>
-        <!--Item-->
+        <!--Home View Controller-->
         <scene sceneID="veS-pf-TYp">
             <objects>
-                <viewController id="RW8-Lf-Vhm" customClass="HomeViewController" customModule="WorkoutBuddies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home View Controller" id="RW8-Lf-Vhm" customClass="HomeViewController" customModule="WorkoutBuddies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Uq-cz-qCK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuN-yv-51v">
-                                <rect key="frame" x="168" y="603" width="79" height="30"/>
+                                <rect key="frame" x="168" y="406" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Plan"/>
                                 <connections>
-                                    <segue destination="e0Q-qN-JQu" kind="presentation" id="gkY-LD-2wE"/>
+                                    <action selector="onCreatePlan:" destination="RW8-Lf-Vhm" eventType="touchUpInside" id="U4K-Wf-DvH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,6 +92,9 @@
                         <viewLayoutGuide key="safeArea" id="2Qt-0S-FaO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="HHp-gg-sgD"/>
+                    <connections>
+                        <segue destination="e0Q-qN-JQu" kind="presentation" identifier="onCreatePlan" id="QC3-ep-xW6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wc3-cY-mmA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,8 +126,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkA-mN-kbz">
-                                <rect key="frame" x="203" y="184.5" width="62" height="30"/>
+                                <rect key="frame" x="203" y="184.5" width="191" height="30"/>
                                 <state key="normal" title="Beginner"/>
+                                <connections>
+                                    <action selector="chooseWorkoutLevel:" destination="F4T-eX-F79" eventType="touchUpInside" id="HpE-yZ-8vI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhv-oO-fTv">
                                 <rect key="frame" x="20" y="291" width="36" height="21"/>
@@ -167,10 +173,16 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jb2-qA-Whw">
                                                     <rect key="frame" x="285" y="10" width="30" height="30"/>
                                                     <state key="normal" title="1"/>
+                                                    <connections>
+                                                        <action selector="onTapChooseSets:" destination="7vq-K0-9Qj" eventType="touchUpInside" id="bSh-T5-YUI"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RX-fb-edx">
                                                     <rect key="frame" x="374" y="10" width="30" height="30"/>
                                                     <state key="normal" title="1"/>
+                                                    <connections>
+                                                        <action selector="onTapChooseReps:" destination="7vq-K0-9Qj" eventType="touchUpInside" id="229-Dv-b37"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -236,7 +248,6 @@
                             <constraint firstItem="cey-MZ-CMc" firstAttribute="leading" secondItem="aFt-2Y-vuP" secondAttribute="leading" id="O2S-3P-yxn"/>
                             <constraint firstItem="XWk-tr-aQH" firstAttribute="leading" secondItem="239-PK-7oO" secondAttribute="leading" id="Owk-3d-uo6"/>
                             <constraint firstItem="xHJ-aE-2cn" firstAttribute="top" secondItem="YkA-mN-kbz" secondAttribute="bottom" constant="40" id="RPY-gH-dXA"/>
-                            <constraint firstItem="YkA-mN-kbz" firstAttribute="width" secondItem="vfZ-Nv-yBD" secondAttribute="width" multiplier="0.324607" id="TRl-VD-8YW"/>
                             <constraint firstItem="Vhv-oO-fTv" firstAttribute="top" secondItem="cey-MZ-CMc" secondAttribute="bottom" constant="81" id="Z6e-wf-kEt"/>
                             <constraint firstItem="aFt-2Y-vuP" firstAttribute="firstBaseline" secondItem="vfZ-Nv-yBD" secondAttribute="firstBaseline" id="c1D-kS-7l0"/>
                             <constraint firstItem="YkA-mN-kbz" firstAttribute="leading" secondItem="cey-MZ-CMc" secondAttribute="trailing" constant="54" id="hao-qK-RM1"/>
@@ -249,10 +260,16 @@
                         <viewLayoutGuide key="safeArea" id="239-PK-7oO"/>
                     </view>
                     <navigationItem key="navigationItem" id="SJc-Jp-29J">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="zpe-ub-hVy"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="zpe-ub-hVy">
+                            <connections>
+                                <action selector="onCreatePlan:" destination="F4T-eX-F79" id="1DK-Hp-xdH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="scheduleDatePicker" destination="xHJ-aE-2cn" id="cIE-3g-FUy"/>
                         <outlet property="tableView" destination="XWk-tr-aQH" id="9eO-h4-21r"/>
+                        <outlet property="workoutName" destination="vfZ-Nv-yBD" id="O9W-1o-WNr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mK-fV-TMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -415,6 +432,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0Rz-wa-eTJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VM4-dR-HKq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
