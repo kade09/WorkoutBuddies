@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "fitness-background-sneakers-dumbbells-headphones-pink-table-top-view-copy-space-179474357.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
