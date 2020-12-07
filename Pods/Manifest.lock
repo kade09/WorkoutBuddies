@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (5.4.0)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - Bolts/Tasks (1.9.1)
+  - DropDown (2.3.13)
+  - Parse (1.19.1):
+    - Parse/Core (= 1.19.1)
+  - Parse/Core (1.19.1):
+    - Bolts/Tasks (= 1.9.1)
+
+DEPENDENCIES:
+  - AlamofireImage
+  - DropDown
+  - Parse
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - Bolts
+    - DropDown
+    - Parse
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Parse: e40fdb9c7d665823b7fe9865949cac9a53eb2ce7
+
+PODFILE CHECKSUM: 3fd9d89ed46a72cba7667ec2962d7f350996c02c
+
+COCOAPODS: 1.10.0
