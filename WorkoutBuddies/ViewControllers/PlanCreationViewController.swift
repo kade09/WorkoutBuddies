@@ -13,7 +13,7 @@ protocol ExerciseDelegate {
     func addExercise(exercise: String)
 }
 
-class PlanCreationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ExerciseDelegate  {
+class PlanCreationViewController: UIViewController {
 
     @IBOutlet weak var workoutName: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +34,10 @@ class PlanCreationViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
+    @IBAction func onBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func chooseWorkoutLevel(_ sender: UIButton) {
         dropDown.dataSource = ["Beginner", "Intermediate", "Advanced"]
             dropDown.anchorView = sender
@@ -46,6 +50,37 @@ class PlanCreationViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    @IBAction func onCreatePlan(_ sender: Any) {
+        tableView.reloadData()
+        let author = PFUser.current()
+        
+        let routine = PFObject(className: "workoutPlan")
+        routine["author"] = author
+        routine["workoutName"] = workoutName.text
+        routine["workoutLevel"] = workoutLevel
+        routine["scheduledDate"] = scheduleDatePicker.date
+        tableView.reloadData()
+        routine["exercises"] = exercises
+        
+        routine.saveInBackground { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else if let error = error {
+                print("error saving workout plan")
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondView = segue.destination as! ExerciseSelectionViewController
+        secondView.delegate = self
+    }
+}
+
+extension PlanCreationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exercises.count + 1
     }
@@ -73,41 +108,12 @@ class PlanCreationViewController: UIViewController, UITableViewDelegate, UITable
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
+}
+
+extension PlanCreationViewController: ExerciseDelegate {
     func addExercise(exercise: String) {
         exercises.append([exercise, "1", "1"])
         tableView.reloadData()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let secondView = segue.destination as! ExerciseSelectionViewController
-        secondView.delegate = self
-    }
-    
-    @IBAction func onCreatePlan(_ sender: Any) {
-        tableView.reloadData()
-        let author = PFUser.current()
-        
-        let routine = PFObject(className: "workoutPlan")
-        routine["author"] = author
-        routine["workoutName"] = workoutName.text
-        routine["workoutLevel"] = workoutLevel
-        routine["scheduledDate"] = scheduleDatePicker.date
-        tableView.reloadData()
-        routine["exercises"] = exercises
-        
-        routine.saveInBackground { (success, error) in
-            if success {
-                self.dismiss(animated: true, completion: nil)
-            }
-            else if let error = error {
-                print("error saving workout plan")
-                print(error.localizedDescription)
-            }
-            
-        }
-        
-    }
-    
 }
 

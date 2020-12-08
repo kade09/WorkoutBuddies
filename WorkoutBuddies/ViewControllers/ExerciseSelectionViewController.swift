@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class ExerciseSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ExerciseSelectionViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var delegate: ExerciseDelegate?
@@ -21,7 +21,9 @@ class ExerciseSelectionViewController: UIViewController, UITableViewDataSource, 
         tableView.dataSource = self
         tableView.reloadData()
     }
-    
+}
+
+extension ExerciseSelectionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exercises.count
     }
