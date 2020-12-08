@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     func getWorkouts() {
-        let query = PFQuery(className: "workoutRoutine")
+        let query = PFQuery(className: "workoutPlan")
         query.limit = 20
         query.whereKey("author", notEqualTo: currUser)
         query.findObjectsInBackground {(routines: [PFObject]?, error: Error?) in
@@ -89,11 +89,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherWorkoutCell", for: indexPath) as! OtherWorkoutCell
         let routine = otherWorkouts[indexPath.row]
+        
         let exercises = routine["exercises"] as! [[String]]
         let author = routine["author"] as! PFUser
-        
         let date = routine["scheduledDate"] as? Date
-               
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, h:mm a"
         let formattedDate = dateFormatter.string(from: date!)
@@ -101,7 +101,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.nameLabel.text = routine["name"] as? String
         cell.dateLabel.text = formattedDate
         cell.numExercisesLabel.text = "# Exercises: \(exercises.count)"
-        cell.authorLabel.text = author.username
+        cell.authorLabel.text = "wjiw"
         
         return cell
     }

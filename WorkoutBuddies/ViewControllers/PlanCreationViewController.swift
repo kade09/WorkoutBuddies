@@ -20,6 +20,11 @@ class PlanCreationViewController: UIViewController {
     @IBOutlet weak var scheduleDatePicker: UIDatePicker!
     
     var exercises = [[String]]()
+    
+    var beginnerRoutine = [[String]]()
+    var intermediateRoutine = [[String]]()
+    var advancedRoutine = [[String]]()
+    
     var workoutLevel = ""
     let dropDown = DropDown()
     
@@ -72,6 +77,9 @@ class PlanCreationViewController: UIViewController {
             }
             
         }
+    }
+    
+    func generateWorkout(level: String) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
