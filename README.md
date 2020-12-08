@@ -24,12 +24,11 @@ WorkoutBuddies is a workout app that pairs similar-leveled users and creates a w
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+<img src='https://recordit.co/aOs5VLoLxI' width=''>
 
-* [ ] User can create an account, login and out
+* [x] User can create an account, login and out
 * [x] User can select their level of expertise
- <img src="http://g.recordit.co/arb2uieWPk.gif" width=''>
 * [x] User can create their own workouts
-  <img src="http://g.recordit.co/WUoUlhOwlv.gif" width=''>
 * [ ] User matches with another user with same the level of expertise
 * [ ] User can meet others through Zoom
 * [ ] User can search for other users
