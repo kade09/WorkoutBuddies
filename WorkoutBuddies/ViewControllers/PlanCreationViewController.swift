@@ -29,6 +29,9 @@ class PlanCreationViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        scheduleDatePicker.minimumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+        scheduleDatePicker.minuteInterval = 30
+        
     }
     
     @IBAction func chooseWorkoutLevel(_ sender: UIButton) {
