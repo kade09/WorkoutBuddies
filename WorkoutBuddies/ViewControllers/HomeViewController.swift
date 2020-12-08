@@ -44,6 +44,7 @@ class HomeViewController: UIViewController {
         let query = PFQuery(className: "workoutPlan")
         query.limit = 20
         query.whereKey("author", notEqualTo: currUser)
+        query.includeKey("author")
         query.findObjectsInBackground {(routines: [PFObject]?, error: Error?) in
             if let routines = routines {
                 self.otherWorkouts = routines
@@ -93,6 +94,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let exercises = routine["exercises"] as! [[String]]
         let author = routine["author"] as! PFUser
         let date = routine["scheduledDate"] as? Date
+        let level = routine["workoutLevel"] as? String
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, h:mm a"
@@ -100,8 +102,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         cell.nameLabel.text = routine["name"] as? String
         cell.dateLabel.text = formattedDate
-        cell.numExercisesLabel.text = "# Exercises: \(exercises.count)"
-        cell.authorLabel.text = "wjiw"
+        cell.numExercisesLabel.text = level
+        cell.authorLabel.text = author.username
         
         return cell
     }

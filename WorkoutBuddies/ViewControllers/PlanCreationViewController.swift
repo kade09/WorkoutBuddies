@@ -21,6 +21,14 @@ class PlanCreationViewController: UIViewController {
     
     var exercises = [[String]]()
     
+    let verticalPullingExercises = [["Jumping Pull-Up", "Negative PullUp"], ["Pull-Up", "Chin-Up", "Wide PullUp", "Narrow PullUp"], ["L-Sit PullUp", "High PullUp", "Archer PullUp", "TyperWriter PullUp"]]
+    let horizontalPullingExercises = [["Incline Row", "Horizontal Row"], ["Wide Row", "Tucked Front Lever", "Archer Rows"], ["Tucked Front Lever PullUp"]]
+    let verticalPushingExercises = [["Parallel Bar Support Hold", "Negative Dip"], ["Dip", "Pike Pushup"], ["Ring Dip", "Bulgarian Ring Dip", "Elevated Pike Pushup"]]
+    let horizontalPushingExercises = [["Incline Pushup", "Knee Pushup"], ["Pushup", "Diamond Pushup", "Decline Pushup"], ["Archer Pushup", "Rings Pushup", "RTO Pushup"]]
+    let squatExercises = [["Squat"], ["Bulgarian Squat", "Cossack Squat"], ["Beginner Shrimp Squat", "Pistol Squat"]]
+    let coreExercises = [["Plank"], ["Tucked Hanging Leg Raises", "Lying Leg Raises"], ["Pike Compressions", "V-Ups", "Tucked DragonFlag"]]
+    let secCoreExercises = [["Reverse HyperExtension"],["Arch Raises", "Arch Body Hold"],["Arch Body Rocks"]]
+    
     var beginnerRoutine = [[String]]()
     var intermediateRoutine = [[String]]()
     var advancedRoutine = [[String]]()
@@ -51,6 +59,7 @@ class PlanCreationViewController: UIViewController {
             dropDown.selectionAction = { [weak self] (index: Int, item: String) in
                 guard let _ = self else {return}
                 self!.workoutLevel = item
+                self!.generateWorkout(level: item)
             sender.setTitle(item, for: .normal)
         }
     }
@@ -80,6 +89,39 @@ class PlanCreationViewController: UIViewController {
     }
     
     func generateWorkout(level: String) {
+        exercises.removeAll()
+        switch level {
+        case "Beginner":
+            exercises.append([verticalPullingExercises[0][0], "3", "5"])
+            exercises.append([horizontalPullingExercises[0][0], "3", "5"])
+            exercises.append([verticalPushingExercises[0][0], "3","5"])
+            exercises.append([horizontalPullingExercises[0][0], "3", "5"])
+            exercises.append([squatExercises[0][0], "3", "5"])
+            exercises.append([coreExercises[0][0], "3", "5"])
+            exercises.append([secCoreExercises[0][0], "3", "5"])
+            break
+        case "Intermediate":
+            exercises.append([verticalPullingExercises[1][0], "3", "5"])
+            exercises.append([horizontalPullingExercises[1][0], "3", "5"])
+            exercises.append([verticalPushingExercises[1][0], "3","5"])
+            exercises.append([horizontalPullingExercises[1][0], "3", "5"])
+            exercises.append([squatExercises[1][0], "3", "5"])
+            exercises.append([coreExercises[1][0], "3", "5"])
+            exercises.append([secCoreExercises[1][0], "3", "5"])
+
+            break
+        default:
+            exercises.append([verticalPullingExercises[2][0], "3", "5"])
+            exercises.append([horizontalPullingExercises[2][0], "3", "5"])
+            exercises.append([verticalPushingExercises[2][0], "3","5"])
+            exercises.append([horizontalPullingExercises[2][0], "3", "5"])
+            exercises.append([squatExercises[2][0], "3", "5"])
+            exercises.append([coreExercises[2][0], "3", "5"])
+            exercises.append([secCoreExercises[2][0], "3", "5"])
+
+            break
+        }
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
