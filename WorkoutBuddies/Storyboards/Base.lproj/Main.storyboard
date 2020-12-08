@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="WorkoutBuddies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="WorkoutBuddies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +289,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8yz-r1-0yJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="4cc-bv-yFj"/>
+                    <navigationItem key="navigationItem" title="Home" id="4cc-bv-yFj">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="cPk-10-fO8">
+                            <connections>
+                                <action selector="onLogout:" destination="IUj-A8-h94" id="eWm-3Q-yZe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="sugguestionsCollectionView" destination="BGI-8z-YAX" id="1Sn-LF-IlW"/>
                         <outlet property="workoutsCollectionView" destination="pxc-Gd-GiV" id="oh8-jK-fsV"/>
@@ -345,14 +351,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciseCell" id="7vq-K0-9Qj" customClass="ExerciseCell" customModule="WorkoutBuddies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="41"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="41.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vq-K0-9Qj" id="tHK-0d-gH9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvG-lN-lRk">
-                                                    <rect key="frame" x="10" y="10" width="42" height="21"/>
+                                                    <rect key="frame" x="10" y="9.9999999999999982" width="42" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -406,7 +412,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddExerciseCell" id="7Ra-pG-Xdr" customClass="AddExerciseCell" customModule="WorkoutBuddies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="69" width="414" height="30.333333969116211"/>
+                                        <rect key="frame" x="0.0" y="69.333332061767578" width="414" height="30.333333969116211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Ra-pG-Xdr" id="aXR-zb-9nG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="30.333333969116211"/>
@@ -799,7 +805,7 @@
         <!--Home-->
         <scene sceneID="Fm2-rO-dQh">
             <objects>
-                <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="XhN-nU-6ew" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" title="Home" automaticallyAdjustsScrollViewInsets="NO" id="XhN-nU-6ew" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="8JH-q6-Vqv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rk5-HW-6u9">
@@ -1012,7 +1018,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vPr-ng-vtH"/>
+        <segue reference="pKb-jU-li3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="146-1468281_profile-icon-png-transparent-profile-picture-icon-png" width="280" height="280"/>
