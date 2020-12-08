@@ -24,7 +24,7 @@ WorkoutBuddies is a workout app that pairs similar-leveled users and creates a w
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-<img src='https://recordit.co/aOs5VLoLxI' width=''>
+<img src='http://g.recordit.co/aOs5VLoLxI.gif' width=''>
 
 * [x] User can create an account, login and out
 * [x] User can select their level of expertise
