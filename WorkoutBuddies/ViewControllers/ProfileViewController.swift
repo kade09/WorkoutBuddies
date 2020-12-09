@@ -34,6 +34,15 @@ class ProfileViewController: UIViewController {
         usernameLabel.text = currentUser.username
            
         getUserCreatedWorkouts()
+        
+        if currentUser["profileImage"] != nil {
+            print("qefknwefiwenfiewnfi")
+            let imageFile = currentUser["profileImage"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            profileImage.af.setImage(withURL: url)
+        }
     }
     
     func getUserCreatedWorkouts() {

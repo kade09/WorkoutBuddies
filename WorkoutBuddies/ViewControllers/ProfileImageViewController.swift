@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class ProfileImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -21,6 +22,14 @@ class ProfileImageViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
     @IBAction func onDoneButton(_ sender: Any) {
+        let user = PFUser.current()!
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        
+        user["profileImage"] = file
+            
+        user.saveInBackground()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onCameraButton(_ sender: Any) {
