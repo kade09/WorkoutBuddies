@@ -91,6 +91,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         dateFormatter.dateFormat = "MMM d, h:mm a"
         let formattedDate = dateFormatter.string(from: date!)
         
+        cell.backgroundColor = UIColor.lightGray
         cell.nameLabel.text = workout["workoutName"] as? String
         cell.exercisesCountLabel.text = "Exercises: \(exercises!.count )"
         cell.dateLabel.text = formattedDate

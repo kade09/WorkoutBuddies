@@ -84,6 +84,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.usernameLabel.text = mate.username
             cell.nameLabel.text = mate["name"] as? String
             cell.levelLabel.text = mate["workoutLevel"] as? String
+            cell.backgroundColor = UIColor.lightGray
             
             return cell
         }
@@ -100,6 +101,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         dateFormatter.dateFormat = "MMM d, h:mm a"
         let formattedDate = dateFormatter.string(from: date!)
         
+        cell.backgroundColor = UIColor.lightGray
         cell.nameLabel.text = routine["name"] as? String
         cell.dateLabel.text = formattedDate
         cell.numExercisesLabel.text = level

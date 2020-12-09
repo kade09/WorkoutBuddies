@@ -350,14 +350,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciseCell" id="7vq-K0-9Qj" customClass="ExerciseCell" customModule="WorkoutBuddies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="41.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="40.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vq-K0-9Qj" id="tHK-0d-gH9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvG-lN-lRk">
-                                                    <rect key="frame" x="10" y="10.000000000000002" width="42" height="21.666666666666671"/>
+                                                    <rect key="frame" x="10" y="10.000000000000002" width="42" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -411,7 +411,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddExerciseCell" id="7Ra-pG-Xdr" customClass="AddExerciseCell" customModule="WorkoutBuddies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="69.666667938232422" width="414" height="30.333333969116211"/>
+                                        <rect key="frame" x="0.0" y="68.666667938232422" width="414" height="30.333333969116211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Ra-pG-Xdr" id="aXR-zb-9nG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="30.333333969116211"/>
@@ -776,12 +776,44 @@
                     </tabBar>
                     <connections>
                         <segue destination="XhN-nU-6ew" kind="relationship" relationship="viewControllers" id="E8S-R4-Xos"/>
+                        <segue destination="TWZ-9m-aky" kind="relationship" relationship="viewControllers" id="2rc-du-pkT"/>
                         <segue destination="uOJ-qM-VOq" kind="relationship" relationship="viewControllers" id="tKI-Yw-rUD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Im-Hq-3p0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="977" y="566"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="GgO-5r-RYf">
+            <objects>
+                <viewController id="gOd-YH-X9L" customClass="SearchViewController" customModule="WorkoutBuddies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1gX-3S-GEl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-sa-z7E">
+                                <rect key="frame" x="0.0" y="56" width="414" height="611"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hhk-sa-z7E" firstAttribute="top" secondItem="zO5-4y-4Bu" secondAttribute="top" id="Kfy-Cd-WBN"/>
+                            <constraint firstItem="zO5-4y-4Bu" firstAttribute="trailing" secondItem="hhk-sa-z7E" secondAttribute="trailing" id="dsS-iB-eYi"/>
+                            <constraint firstItem="zO5-4y-4Bu" firstAttribute="bottom" secondItem="hhk-sa-z7E" secondAttribute="bottom" id="isH-sU-WGS"/>
+                            <constraint firstItem="hhk-sa-z7E" firstAttribute="leading" secondItem="zO5-4y-4Bu" secondAttribute="leading" id="yPH-Pn-8M4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zO5-4y-4Bu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gBA-4v-T02"/>
+                    <connections>
+                        <outlet property="tableView" destination="hhk-sa-z7E" id="rAs-JC-4Lx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cI-QA-84J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844.9275362318845" y="580.43478260869574"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9q4-d4-c3z">
@@ -805,7 +837,7 @@
         <scene sceneID="Fm2-rO-dQh">
             <objects>
                 <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="XhN-nU-6ew" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="8JH-q6-Vqv"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="8JH-q6-Vqv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rk5-HW-6u9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -1015,6 +1047,25 @@
             </objects>
             <point key="canvasLocation" x="977" y="1913"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="40M-xM-NrZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TWZ-9m-aky" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="wT2-T1-35G"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9zG-j7-smd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gOd-YH-X9L" kind="relationship" relationship="rootViewController" id="o4w-lf-Edb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWK-F5-pHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1937.68115942029" y="580.43478260869574"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pKb-jU-li3"/>
@@ -1024,7 +1075,9 @@
         <image name="Add Profile Pic" width="520" height="514"/>
         <image name="Matexercise" width="234" height="75"/>
         <image name="fitness-background-sneakers-dumbbells-headphones-pink-table-top-view-copy-space-179474357" width="800" height="533"/>
+        <image name="house" catalog="system" width="128" height="110"/>
         <image name="image_placeholder" width="375" height="375"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
