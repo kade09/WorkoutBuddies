@@ -21,6 +21,8 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func tapChooseWorkoutLevel(_ sender: UIButton) {
