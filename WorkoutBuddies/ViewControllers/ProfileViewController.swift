@@ -34,9 +34,12 @@ class ProfileViewController: UIViewController {
         usernameLabel.text = currentUser.username
            
         getUserCreatedWorkouts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        currentUser = PFUser.current()
         
         if currentUser["profileImage"] != nil {
-            print("qefknwefiwenfiewnfi")
             let imageFile = currentUser["profileImage"] as! PFFileObject
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
