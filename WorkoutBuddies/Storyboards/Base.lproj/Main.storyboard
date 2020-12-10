@@ -776,7 +776,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="XhN-nU-6ew" kind="relationship" relationship="viewControllers" id="E8S-R4-Xos"/>
-                        <segue destination="TWZ-9m-aky" kind="relationship" relationship="viewControllers" id="2rc-du-pkT"/>
+                        <segue destination="gOd-YH-X9L" kind="relationship" relationship="viewControllers" id="ArD-Yj-jM6"/>
                         <segue destination="uOJ-qM-VOq" kind="relationship" relationship="viewControllers" id="tKI-Yw-rUD"/>
                     </connections>
                 </tabBarController>
@@ -784,7 +784,7 @@
             </objects>
             <point key="canvasLocation" x="977" y="566"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="GgO-5r-RYf">
             <objects>
                 <viewController id="gOd-YH-X9L" customClass="SearchViewController" customModule="WorkoutBuddies" customModuleProvider="target" sceneMemberID="viewController">
@@ -793,8 +793,81 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-sa-z7E">
-                                <rect key="frame" x="0.0" y="56" width="414" height="611"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="NdQ-MW-5B9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="153" id="r7N-P6-YAk" customClass="SearchCell" customModule="WorkoutBuddies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="153"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r7N-P6-YAk" id="fg7-hp-ehE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="146-1468281_profile-icon-png-transparent-profile-picture-icon-png" translatesAutoresizingMaskIntoConstraints="NO" id="sRM-Fh-vZm">
+                                                    <rect key="frame" x="20" y="10" width="128" height="133"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="128" id="amq-Ho-S6a"/>
+                                                        <constraint firstAttribute="width" secondItem="sRM-Fh-vZm" secondAttribute="height" multiplier="1:1" id="ikI-B2-Smb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fz-RP-age">
+                                                    <rect key="frame" x="168" y="10" width="41.666666666666657" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m32-LH-fEl">
+                                                    <rect key="frame" x="168" y="41" width="41.666666666666657" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaB-Ot-azu">
+                                                    <rect key="frame" x="168" y="72" width="41.666666666666657" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-0f-ply">
+                                                    <rect key="frame" x="168" y="103" width="41.666666666666657" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="m32-LH-fEl" firstAttribute="leading" secondItem="4fz-RP-age" secondAttribute="leading" id="3Jr-iq-Zuq"/>
+                                                <constraint firstItem="Tuo-0f-ply" firstAttribute="leading" secondItem="4fz-RP-age" secondAttribute="leading" id="6Tu-fS-Ox6"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Tuo-0f-ply" secondAttribute="bottom" constant="10" id="6Zn-fu-t6Q"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4fz-RP-age" secondAttribute="trailing" constant="20" id="70h-Cy-cOP"/>
+                                                <constraint firstItem="4fz-RP-age" firstAttribute="leading" secondItem="sRM-Fh-vZm" secondAttribute="trailing" constant="20" id="Fye-W2-do4"/>
+                                                <constraint firstItem="4fz-RP-age" firstAttribute="top" secondItem="fg7-hp-ehE" secondAttribute="top" constant="10" id="KG2-Ak-eIN"/>
+                                                <constraint firstItem="sRM-Fh-vZm" firstAttribute="top" secondItem="fg7-hp-ehE" secondAttribute="top" constant="10" id="KQG-od-Kso"/>
+                                                <constraint firstItem="DaB-Ot-azu" firstAttribute="leading" secondItem="4fz-RP-age" secondAttribute="leading" id="VPO-qY-4JU"/>
+                                                <constraint firstAttribute="bottom" secondItem="sRM-Fh-vZm" secondAttribute="bottom" constant="10" id="WjU-21-3q8"/>
+                                                <constraint firstItem="m32-LH-fEl" firstAttribute="top" secondItem="4fz-RP-age" secondAttribute="bottom" constant="10" id="ai8-kA-3qJ"/>
+                                                <constraint firstItem="sRM-Fh-vZm" firstAttribute="leading" secondItem="fg7-hp-ehE" secondAttribute="leading" constant="20" id="kWr-y8-DXz"/>
+                                                <constraint firstItem="DaB-Ot-azu" firstAttribute="top" secondItem="m32-LH-fEl" secondAttribute="bottom" constant="10" id="lkI-r2-LzJ"/>
+                                                <constraint firstItem="DaB-Ot-azu" firstAttribute="trailing" secondItem="4fz-RP-age" secondAttribute="trailing" id="qfU-j7-WxC"/>
+                                                <constraint firstItem="Tuo-0f-ply" firstAttribute="trailing" secondItem="4fz-RP-age" secondAttribute="trailing" id="vTW-5F-bqP"/>
+                                                <constraint firstItem="m32-LH-fEl" firstAttribute="trailing" secondItem="4fz-RP-age" secondAttribute="trailing" id="wck-Z9-9s1"/>
+                                                <constraint firstItem="Tuo-0f-ply" firstAttribute="top" secondItem="DaB-Ot-azu" secondAttribute="bottom" constant="10" id="yIO-l7-4z3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countWorkoutsLabel" destination="Tuo-0f-ply" id="2lM-7t-hoB"/>
+                                            <outlet property="levelLabel" destination="DaB-Ot-azu" id="EY4-0s-QFC"/>
+                                            <outlet property="nameLabel" destination="m32-LH-fEl" id="q0Y-Wy-jbI"/>
+                                            <outlet property="userImageView" destination="sRM-Fh-vZm" id="gDE-xa-ZYn"/>
+                                            <outlet property="usernameLabel" destination="4fz-RP-age" id="3x4-Qs-KNK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -806,8 +879,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zO5-4y-4Bu"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="wCb-b5-Y2q"/>
                     <navigationItem key="navigationItem" id="gBA-4v-T02"/>
                     <connections>
+                        <outlet property="searchBar" destination="NdQ-MW-5B9" id="K4P-uk-U2W"/>
                         <outlet property="tableView" destination="hhk-sa-z7E" id="rAs-JC-4Lx"/>
                     </connections>
                 </viewController>
@@ -1046,25 +1121,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P25-yZ-IaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="977" y="1913"/>
-        </scene>
-        <!--Search-->
-        <scene sceneID="40M-xM-NrZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TWZ-9m-aky" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="wT2-T1-35G"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9zG-j7-smd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gOd-YH-X9L" kind="relationship" relationship="rootViewController" id="o4w-lf-Edb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uWK-F5-pHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1937.68115942029" y="580.43478260869574"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
