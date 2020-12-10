@@ -28,7 +28,7 @@ class SearchViewController: UIViewController {
     func getUsers() {
         let query = PFUser.query()
         query?.limit = 20
-        query?.whereKey("objectId", notEqualTo: currUser)
+        query?.whereKey("user", notEqualTo: currUser)
         self.users = try! query!.findObjects()
         tableView.reloadData()
     }
@@ -53,6 +53,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.usernameLabel.text = potentialBuddy["username"] as? String
         cell.nameLabel.text = potentialBuddy["name"] as? String
+        cell.levelLabel.text = potentialBuddy["workoutLevel"] as? String
+        cell.countWorkoutsLabel.text = "2"
         
         return cell
     }
