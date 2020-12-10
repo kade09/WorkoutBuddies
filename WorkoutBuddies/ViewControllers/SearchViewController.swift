@@ -14,11 +14,15 @@ class SearchViewController: UIViewController {
     
     var users = [PFObject]()
     var currUser = PFUser()
+    var filteredUsers = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        searchBar.placeholder = "Search by username or by name"
+        
+        searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         currUser = PFUser.current()!
@@ -30,18 +34,19 @@ class SearchViewController: UIViewController {
         query?.limit = 20
         query?.whereKey("user", notEqualTo: currUser)
         self.users = try! query!.findObjects()
+        self.filteredUsers = self.users
         tableView.reloadData()
     }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return filteredUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
-        let potentialBuddy = users[indexPath.row] as! PFUser
+        let potentialBuddy = filteredUsers[indexPath.row] as! PFUser
         
         if potentialBuddy["profileImage"] != nil {
             let imageFile = potentialBuddy["profileImage"] as! PFFileObject
@@ -57,5 +62,33 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.countWorkoutsLabel.text = "2"
         
         return cell
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredUsers = searchText.isEmpty ? users : users.filter {
+            (user: PFObject) -> Bool in
+            let updatedUser = user as! PFUser
+            let updatedUsername = updatedUser.username!
+            let updatedName = updatedUser["name"] as! String
+            
+            let inUsername = updatedUsername.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            let inName = updatedName.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            
+            return inUsername || inName
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
     }
 }
