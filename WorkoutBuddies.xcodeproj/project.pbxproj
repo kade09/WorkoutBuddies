@@ -15,6 +15,8 @@
 		2664A6BB2562524B00AB5C27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2664A6B92562524B00AB5C27 /* LaunchScreen.storyboard */; };
 		2664A6C62562524B00AB5C27 /* WorkoutBuddiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2664A6C52562524B00AB5C27 /* WorkoutBuddiesTests.swift */; };
 		2664A6D12562524B00AB5C27 /* WorkoutBuddiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2664A6D02562524B00AB5C27 /* WorkoutBuddiesUITests.swift */; };
+		44690E6D2582EF5D00FC5DD0 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44690E6C2582EF5D00FC5DD0 /* SuggestionViewController.swift */; };
+		44690E722582F0C000FC5DD0 /* SuggestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44690E712582F0C000FC5DD0 /* SuggestionsCell.swift */; };
 		446ECCFC257C2ACC00D934E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ECCFB257C2ACC00D934E1 /* ProfileViewController.swift */; };
 		449BFF55257C17CB00E468D2 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449BFF54257C17CB00E468D2 /* ProfileImageViewController.swift */; };
 		CEE772F5C52669CDB8D69D62 /* Pods_WorkoutBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D9B66085E0BF8A0D6DBC37 /* Pods_WorkoutBuddies.framework */; };
@@ -72,6 +74,8 @@
 		2664A6D02562524B00AB5C27 /* WorkoutBuddiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuddiesUITests.swift; sourceTree = "<group>"; };
 		2664A6D22562524B00AB5C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299B3675F4F773CFC764B67D /* Pods_WorkoutBuddies_WorkoutBuddiesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutBuddies_WorkoutBuddiesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44690E6C2582EF5D00FC5DD0 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		44690E712582F0C000FC5DD0 /* SuggestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCell.swift; sourceTree = "<group>"; };
 		446ECCFB257C2ACC00D934E1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		449BFF54257C17CB00E468D2 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
 		763D57EE8BB87B710FAC5748 /* Pods-WorkoutBuddies-WorkoutBuddiesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutBuddies-WorkoutBuddiesUITests.release.xcconfig"; path = "Target Support Files/Pods-WorkoutBuddies-WorkoutBuddiesUITests/Pods-WorkoutBuddies-WorkoutBuddiesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				E4EF973C2572E19200029984 /* HomeViewController.swift */,
 				E422D81A25819B0B00C9F950 /* SearchViewController.swift */,
 				446ECCFB257C2ACC00D934E1 /* ProfileViewController.swift */,
+				44690E6C2582EF5D00FC5DD0 /* SuggestionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				E4AF618C257ECCFD009C0824 /* UpcomingWorkoutsProfileCell.swift */,
 				E44D5FAA257C8E31001E7BF3 /* AddExerciseCell.swift */,
 				E4AE64902579B6C800411175 /* ExerciseCell.swift */,
+				44690E712582F0C000FC5DD0 /* SuggestionsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -501,10 +507,12 @@
 				E4AE64892579B65000411175 /* PlanCreationViewController.swift in Sources */,
 				E44D5FAB257C8E31001E7BF3 /* AddExerciseCell.swift in Sources */,
 				2664A6AF2562524900AB5C27 /* AppDelegate.swift in Sources */,
+				44690E6D2582EF5D00FC5DD0 /* SuggestionViewController.swift in Sources */,
 				E4AF6191257ED1AB009C0824 /* RandomBuddyCell.swift in Sources */,
 				446ECCFC257C2ACC00D934E1 /* ProfileViewController.swift in Sources */,
 				E4EF973B2572E18900029984 /* RegistrationViewController.swift in Sources */,
 				E422D81F2581A14500C9F950 /* SearchCell.swift in Sources */,
+				44690E722582F0C000FC5DD0 /* SuggestionsCell.swift in Sources */,
 				E44D5FAD257C8E5F001E7BF3 /* CreatePlanCell.swift in Sources */,
 				E4AF618D257ECCFD009C0824 /* UpcomingWorkoutsProfileCell.swift in Sources */,
 				2664A6B12562524900AB5C27 /* SceneDelegate.swift in Sources */,
