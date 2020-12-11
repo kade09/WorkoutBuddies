@@ -208,13 +208,13 @@
 				E4EF97382572E16A00029984 /* LoginViewController.swift */,
 				E4AE64882579B65000411175 /* PlanCreationViewController.swift */,
 				E4EF973A2572E18900029984 /* RegistrationViewController.swift */,
-				449BFF54257C17CB00E468D2 /* ProfileImageViewController.swift */,
 				E422D8222582C22100C9F950 /* DetailUserViewController.swift */,
 				E422D8202582C21000C9F950 /* DetailWorkoutViewController.swift */,
 				E4AE648A2579B66800411175 /* ExerciseSelectionViewController.swift */,
 				E4EF973C2572E19200029984 /* HomeViewController.swift */,
 				E422D81A25819B0B00C9F950 /* SearchViewController.swift */,
 				446ECCFB257C2ACC00D934E1 /* ProfileViewController.swift */,
+				449BFF54257C17CB00E468D2 /* ProfileImageViewController.swift */,
 				44690E6C2582EF5D00FC5DD0 /* SuggestionViewController.swift */,
 			);
 			path = ViewControllers;

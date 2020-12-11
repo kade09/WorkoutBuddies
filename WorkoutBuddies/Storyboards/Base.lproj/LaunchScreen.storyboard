@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,30 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Matexercise" translatesAutoresizingMaskIntoConstraints="NO" id="q0d-zN-A5b">
-                                <rect key="frame" x="20" y="124" width="374" height="154"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Matexercise Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Xev-Ry-AJX">
+                                <rect key="frame" x="10" y="455" width="394" height="277"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="q0d-zN-A5b" secondAttribute="height" multiplier="17:7" id="wjb-gW-BKH"/>
+                                    <constraint firstAttribute="height" constant="277" id="Ihf-Yt-7X5"/>
+                                    <constraint firstAttribute="width" constant="394" id="Wod-BF-Spy"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Matexercise Icon" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-58-vW1">
-                                <rect key="frame" x="53" y="288" width="308" height="311"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="cqi-58-vW1" secondAttribute="height" multiplier="308:311" id="jJY-az-RD7"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Matexercise Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ReG-zZ-AIL">
+                                <rect key="frame" x="10" y="104" width="394" height="281"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.060280284562472197" green="0.029739381687095882" blue="0.26253487199711545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="cqi-58-vW1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="auz-JI-LZb"/>
-                            <constraint firstItem="cqi-58-vW1" firstAttribute="top" secondItem="q0d-zN-A5b" secondAttribute="bottom" constant="10" id="hKr-94-b4y"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cqi-58-vW1" secondAttribute="bottom" constant="50" id="mxG-2O-J96"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q0d-zN-A5b" secondAttribute="trailing" constant="20" id="n2v-og-CSU"/>
-                            <constraint firstItem="q0d-zN-A5b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oyh-Sh-F6j"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cqi-58-vW1" secondAttribute="trailing" constant="53" id="q52-cx-0hF"/>
-                            <constraint firstItem="q0d-zN-A5b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="yOh-wG-C1w"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xev-Ry-AJX" secondAttribute="bottom" constant="130" id="65R-FZ-UxW"/>
+                            <constraint firstItem="ReG-zZ-AIL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="8V4-Ho-3kH"/>
+                            <constraint firstItem="Xev-Ry-AJX" firstAttribute="trailing" secondItem="ReG-zZ-AIL" secondAttribute="trailing" id="DhV-za-KgQ"/>
+                            <constraint firstItem="Xev-Ry-AJX" firstAttribute="leading" secondItem="ReG-zZ-AIL" secondAttribute="leading" id="HeT-jB-opj"/>
+                            <constraint firstItem="ReG-zZ-AIL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="TsC-hW-AOy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ReG-zZ-AIL" secondAttribute="trailing" constant="10" id="daB-DP-5EQ"/>
+                            <constraint firstItem="Xev-Ry-AJX" firstAttribute="centerX" secondItem="ReG-zZ-AIL" secondAttribute="centerX" id="nW3-cC-vHB"/>
+                            <constraint firstItem="Xev-Ry-AJX" firstAttribute="top" secondItem="ReG-zZ-AIL" secondAttribute="bottom" constant="70" id="tfJ-fA-0qn"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +48,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Matexercise" width="234" height="75"/>
         <image name="Matexercise Icon" width="120" height="120"/>
+        <image name="Matexercise Logo" width="382" height="281"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -13,6 +13,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     var mates = [PFObject]()
+    var filteredMates = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         query!.limit = 20
         let users = try! query?.findObjects()
         mates = users!
+        self.mates = try! query!.findObjects()
+        self.filteredMates = self.mates
         self.tableView.reloadData()
     }
     
@@ -44,11 +47,20 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.nameLabel.text = mate["name"] as? String
             cell.levelLabel.text = mate["workoutLevel"] as? String
             cell.backgroundColor = UIColor.lightGray
+        
+        let potentialBuddy = filteredMates[indexPath.row] as! PFUser
+        if potentialBuddy["profileImage"] != nil {
+            let imageFile = potentialBuddy["profileImage"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
             
-            return cell
+            cell.profilePicture.af_setImage(withURL: url)
+            
+        
 
     }
-
+        return cell
+    }
 
     /*
     // MARK: - Navigation
@@ -61,3 +73,4 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
     */
 
 }
+

@@ -20,11 +20,12 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        searchBar.placeholder = "Search by username or by name"
+        searchBar.placeholder = "Search by username or name"
         
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
         currUser = PFUser.current()!
         getUsers()
     }
