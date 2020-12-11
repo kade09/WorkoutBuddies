@@ -54,7 +54,7 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             
-            cell.profilePicture.af_setImage(withURL: url)
+            cell.profilePicture.af.setImage(withURL: url)
             
         
 
