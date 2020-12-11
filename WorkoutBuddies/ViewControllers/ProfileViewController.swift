@@ -24,7 +24,8 @@ class ProfileViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         currentUser = PFUser.current()
-        profileImage.makeRounded()
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = profileImage.bounds.width/2
            
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -105,15 +106,5 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
         let cellWidth = 180
         let cellHeight = 128
         return CGSize(width: cellWidth, height: cellHeight)
-    }
-}
-
-extension UIImageView {
-    func makeRounded() {
-        self.layer.borderWidth = 1
-        self.layer.masksToBounds = false
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.cornerRadius = self.frame.height/2
-        self.clipsToBounds = true
     }
 }
