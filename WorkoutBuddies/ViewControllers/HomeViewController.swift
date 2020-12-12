@@ -41,9 +41,12 @@ class HomeViewController: UIViewController {
     }
     
     func getWorkouts() {
+        let currDate = Date()
         let query = PFQuery(className: "workoutPlan")
         query.limit = 20
         query.whereKey("author", notEqualTo: currUser)
+        query.whereKey("scheduledDate", greaterThan: currDate)
+        query.addDescendingOrder("scheduledDate")
         query.includeKey("author")
         query.findObjectsInBackground {(routines: [PFObject]?, error: Error?) in
             if let routines = routines {

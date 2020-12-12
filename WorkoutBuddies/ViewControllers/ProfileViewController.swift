@@ -50,10 +50,12 @@ class ProfileViewController: UIViewController {
     }
     
     func getUserCreatedWorkouts() {
+        let currDate = Date()
         let query = PFQuery(className: "workoutPlan")
         query.limit = 10
         query.whereKey("author", equalTo: currentUser!)
         query.addDescendingOrder("scheduledDate")
+        query.whereKey("scheduledDate", greaterThan: currDate)
         query.findObjectsInBackground { (routines: [PFObject]?, error: Error?) in
             if let routines = routines {
                 print("Successfully queried and obtained the routines")

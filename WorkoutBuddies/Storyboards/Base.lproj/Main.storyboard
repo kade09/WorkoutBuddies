@@ -186,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bC-p3-06A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1478.2608695652175" y="2092.663043478261"/>
+            <point key="canvasLocation" x="-1914" y="2852"/>
         </scene>
         <!--Home-->
         <scene sceneID="bBI-aS-tCl">
@@ -394,6 +394,7 @@
                     <connections>
                         <outlet property="sugguestionsCollectionView" destination="BGI-8z-YAX" id="1Sn-LF-IlW"/>
                         <outlet property="workoutsCollectionView" destination="pxc-Gd-GiV" id="oh8-jK-fsV"/>
+                        <segue destination="KQa-kH-AJP" kind="presentation" identifier="chosenWorkoutSegue" id="oao-DD-8gp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyh-2p-zH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -625,7 +626,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="-742.02898550724649" y="3600.0000000000005"/>
+            <point key="canvasLocation" x="-709" y="3622"/>
         </scene>
         <!--Exercise Selection View Controller-->
         <scene sceneID="val-FV-Z2D">
@@ -687,7 +688,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAx-SK-sjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-742" y="4407"/>
+            <point key="canvasLocation" x="-710" y="4399"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="Sm8-DL-2Fs">
@@ -1045,16 +1046,16 @@
             </objects>
             <point key="canvasLocation" x="541" y="1339"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Workout View Controller-->
         <scene sceneID="PgH-WB-u2M">
             <objects>
-                <viewController id="ovT-J6-98b" sceneMemberID="viewController">
+                <viewController id="ovT-J6-98b" customClass="DetailWorkoutViewController" customModule="WorkoutBuddies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TtJ-yo-odn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KzH-QO-Gm1">
-                                <rect key="frame" x="0.0" y="228" width="414" height="508"/>
+                                <rect key="frame" x="0.0" y="240" width="414" height="476"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wc4-J5-i5L">
@@ -1118,49 +1119,49 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBp-ts-rd6">
-                                <rect key="frame" x="20" y="84" width="42" height="21"/>
+                                <rect key="frame" x="20" y="96" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k05-4I-3Pb">
-                                <rect key="frame" x="82" y="84" width="42" height="21"/>
+                                <rect key="frame" x="82" y="96" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIn-3U-Ihg">
-                                <rect key="frame" x="20" y="115" width="42" height="21"/>
+                                <rect key="frame" x="20" y="127" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQl-vr-bI6">
-                                <rect key="frame" x="82" y="115" width="42" height="21"/>
+                                <rect key="frame" x="82" y="127" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ae-eZ-cgP">
-                                <rect key="frame" x="20" y="146" width="42" height="21"/>
+                                <rect key="frame" x="20" y="158" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVN-64-9vH">
-                                <rect key="frame" x="82" y="146" width="42" height="21"/>
+                                <rect key="frame" x="82" y="158" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Un-vR-AH9">
-                                <rect key="frame" x="20" y="177" width="42" height="21"/>
+                                <rect key="frame" x="20" y="189" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxR-My-W0a">
-                                <rect key="frame" x="82" y="177" width="42" height="21"/>
+                                <rect key="frame" x="82" y="189" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1198,12 +1199,20 @@
                         <viewLayoutGuide key="safeArea" id="gA7-7D-JXU"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qjk-1q-t4y">
-                        <barButtonItem key="rightBarButtonItem" title="Join" id="JXu-BL-Woa"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="JXu-BL-Woa"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="levelLabel" destination="SIn-3U-Ihg" id="OkO-Hc-dD2"/>
+                        <outlet property="nameLabel" destination="CBp-ts-rd6" id="YLd-xV-xT0"/>
+                        <outlet property="personJoinedLabel" destination="9Un-vR-AH9" id="Zg8-Zj-Nrt"/>
+                        <outlet property="rightBarButton" destination="JXu-BL-Woa" id="Y4k-Ys-jyi"/>
+                        <outlet property="scheduledDateLabel" destination="6Ae-eZ-cgP" id="vL5-TN-xJK"/>
+                        <outlet property="tableView" destination="KzH-QO-Gm1" id="UTl-ML-gdk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7N-AW-yqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446.376811594203" y="2471.739130434783"/>
+            <point key="canvasLocation" x="1299" y="3621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9q4-d4-c3z">
@@ -1221,7 +1230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERL-jf-2LW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-742" y="2852"/>
+            <point key="canvasLocation" x="-709" y="2852"/>
         </scene>
         <!--Home-->
         <scene sceneID="Fm2-rO-dQh">
@@ -1418,6 +1427,7 @@
                         <outlet property="nameLabel" destination="3sC-9T-mUO" id="pXZ-HC-XEi"/>
                         <outlet property="profileImage" destination="D6h-8L-a2e" id="chv-2y-6K4"/>
                         <outlet property="usernameLabel" destination="W04-MV-K49" id="eo9-5K-RqF"/>
+                        <segue destination="KQa-kH-AJP" kind="presentation" identifier="userChosenWorkoutSegue" id="dYi-aZ-UAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUk-AC-aTl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1454,7 +1464,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KQa-kH-AJP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HJD-hx-d7L">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1464,7 +1474,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3t-BX-R8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540.57971014492762" y="2471.739130434783"/>
+            <point key="canvasLocation" x="1299" y="2852"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sqJ-4I-UxX">
@@ -1486,6 +1496,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="dYi-aZ-UAQ"/>
         <segue reference="vPr-ng-vtH"/>
     </inferredMetricsTieBreakers>
     <resources>
