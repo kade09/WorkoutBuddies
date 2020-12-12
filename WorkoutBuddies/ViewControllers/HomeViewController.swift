@@ -69,6 +69,17 @@ class HomeViewController: UIViewController {
         
         sceneDelegate.window?.rootViewController = loginViewController
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chosenWorkoutSegue" {
+            let cell = sender as! UICollectionViewCell
+            let indexPath = workoutsCollectionView.indexPath(for: cell)!
+            let routine = otherWorkouts[indexPath.row]
+            
+            let detailWorkout = segue.destination as! DetailWorkoutViewController
+            detailWorkout.routine = routine
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -95,7 +106,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherWorkoutCell", for: indexPath) as! OtherWorkoutCell
         let routine = otherWorkouts[indexPath.row]
         
-        let exercises = routine["exercises"] as! [[String]]
         let author = routine["author"] as! PFUser
         let date = routine["scheduledDate"] as? Date
         let level = routine["workoutLevel"] as? String

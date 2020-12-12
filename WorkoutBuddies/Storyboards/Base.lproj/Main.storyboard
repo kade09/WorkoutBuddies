@@ -331,6 +331,7 @@
                                             <outlet property="dateLabel" destination="QDn-gK-JFb" id="IDq-PE-nJi"/>
                                             <outlet property="nameLabel" destination="Txs-bn-q5j" id="4Fm-GU-UB2"/>
                                             <outlet property="numExercisesLabel" destination="oFE-RO-6dO" id="t80-7A-njN"/>
+                                            <segue destination="ovT-J6-98b" kind="show" identifier="chosenWorkoutSegue" id="CmV-yu-BZX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -394,7 +395,6 @@
                     <connections>
                         <outlet property="sugguestionsCollectionView" destination="BGI-8z-YAX" id="1Sn-LF-IlW"/>
                         <outlet property="workoutsCollectionView" destination="pxc-Gd-GiV" id="oh8-jK-fsV"/>
-                        <segue destination="KQa-kH-AJP" kind="presentation" identifier="chosenWorkoutSegue" id="oao-DD-8gp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyh-2p-zH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1055,7 +1055,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KzH-QO-Gm1">
-                                <rect key="frame" x="0.0" y="358" width="414" height="358"/>
+                                <rect key="frame" x="0.0" y="358" width="414" height="309"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciseCell" id="Wc4-J5-i5L" customClass="ExerciseCell" customModule="WorkoutBuddies" customModuleProvider="target">
@@ -1174,7 +1174,7 @@
                                 </constraints>
                             </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="auU-au-inQ">
-                                <rect key="frame" x="79" y="244" width="325" height="50"/>
+                                <rect key="frame" x="79.333333333333343" y="244" width="324.66666666666663" height="50"/>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1227,17 +1227,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="levelLabel" destination="SIn-3U-Ihg" id="OkO-Hc-dD2"/>
-                        <outlet property="nameLabel" destination="CBp-ts-rd6" id="YLd-xV-xT0"/>
-                        <outlet property="personJoinedLabel" destination="9Un-vR-AH9" id="Zg8-Zj-Nrt"/>
+                        <outlet property="levelLabel" destination="yQl-vr-bI6" id="njL-xa-CUQ"/>
+                        <outlet property="nameLabel" destination="k05-4I-3Pb" id="ypv-B4-tlX"/>
+                        <outlet property="personJoinedLabel" destination="OxR-My-W0a" id="mRR-vK-JJd"/>
                         <outlet property="rightBarButton" destination="JXu-BL-Woa" id="Y4k-Ys-jyi"/>
-                        <outlet property="scheduledDateLabel" destination="6Ae-eZ-cgP" id="vL5-TN-xJK"/>
+                        <outlet property="scheduledDate" destination="auU-au-inQ" id="ws0-1M-Go8"/>
                         <outlet property="tableView" destination="KzH-QO-Gm1" id="UTl-ML-gdk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7N-AW-yqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298.5507246376812" y="3620.380434782609"/>
+            <point key="canvasLocation" x="1122" y="2852"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9q4-d4-c3z">
@@ -1379,6 +1379,7 @@
                                             <outlet property="dateLabel" destination="mtp-F6-r5P" id="8Ih-hi-MWT"/>
                                             <outlet property="exercisesCountLabel" destination="4Uy-sM-OQA" id="vc9-sg-LMi"/>
                                             <outlet property="nameLabel" destination="Nnm-7J-uvt" id="UWS-ar-Jcz"/>
+                                            <segue destination="ovT-J6-98b" kind="show" id="m7N-PQ-6Fx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1452,7 +1453,6 @@
                         <outlet property="nameLabel" destination="3sC-9T-mUO" id="pXZ-HC-XEi"/>
                         <outlet property="profileImage" destination="D6h-8L-a2e" id="chv-2y-6K4"/>
                         <outlet property="usernameLabel" destination="W04-MV-K49" id="eo9-5K-RqF"/>
-                        <segue destination="KQa-kH-AJP" kind="presentation" identifier="userChosenWorkoutSegue" id="dYi-aZ-UAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUk-AC-aTl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1484,24 +1484,6 @@
             <point key="canvasLocation" x="2014" y="1339"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ebd-tx-wks">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KQa-kH-AJP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HJD-hx-d7L">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ovT-J6-98b" kind="relationship" relationship="rootViewController" id="PrU-bA-tU6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3t-BX-R8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1299" y="2852"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="sqJ-4I-UxX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CPr-eT-4ox" sceneMemberID="viewController">
@@ -1521,7 +1503,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dYi-aZ-UAQ"/>
+        <segue reference="m7N-PQ-6Fx"/>
         <segue reference="vPr-ng-vtH"/>
     </inferredMetricsTieBreakers>
     <resources>

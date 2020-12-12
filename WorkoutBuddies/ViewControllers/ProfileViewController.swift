@@ -68,6 +68,14 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        let routine = userCreatedWorkouts[indexPath.row]
+        
+        let detailWorkout = segue.destination as! DetailWorkoutViewController
+        detailWorkout.routine = routine    }
 }
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {

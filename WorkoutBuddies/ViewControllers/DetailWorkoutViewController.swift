@@ -11,12 +11,14 @@ import Parse
 class DetailWorkoutViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var scheduledDateLabel: UILabel!
     @IBOutlet weak var personJoinedLabel: UILabel!
+    @IBOutlet weak var scheduledDate: UIDatePicker!
+    
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     @IBOutlet weak var tableView: UITableView!
     
+    var currUser: PFUser!
     var routine: PFObject!
     var exercises = [[String]]()
     
@@ -24,8 +26,26 @@ class DetailWorkoutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        currUser = PFUser.current()!
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
+        scheduledDate.minimumDate = Date()
+        scheduledDate.minuteInterval = 30
+        
+        scheduledDate.date = (routine["scheduledDate"] as? Date)!
+        
+        nameLabel.text = routine["workoutName"] as? String
+        levelLabel.text = routine["workoutLevel"] as? String
+        
+        if let buddy = routine["buddy"] as? PFUser {
+            personJoinedLabel.text = buddy.username
+        }
+        
+        exercises = (routine["exercises"] as? [[String]])!
+        
+        tableView.reloadData()
     }
     
     @IBAction func onBack(_ sender: Any) {
@@ -42,6 +62,12 @@ extension DetailWorkoutViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell") as! ExerciseCell
+                       
+        cell.exerciseNameLabel.text = exercises[indexPath.row][0]
+        exercises[indexPath.row][1] = cell.chooseSetsBtn.currentTitle ?? "1"
+        exercises[indexPath.row][2] = cell.chooseRepsBtn.currentTitle ?? "1"
+                       
+        return cell
     }
 }
