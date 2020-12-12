@@ -27,6 +27,13 @@ class DetailWorkoutViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    @IBAction func onBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onRightBarButtone(_ sender: Any) {
+    }
 }
 
 extension DetailWorkoutViewController: UITableViewDataSource, UITableViewDelegate {
