@@ -15,7 +15,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     var userCreatedWorkouts: [PFObject]!
     var currentUser: PFUser!
        
@@ -102,7 +101,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         dateFormatter.dateFormat = "MMM d, h:mm a"
         let formattedDate = dateFormatter.string(from: date!)
         
-        cell.backgroundColor = UIColor.lightGray
+        cell.backgroundColor = UIColor.yellow
         cell.nameLabel.text = workout["workoutName"] as? String
         cell.exercisesCountLabel.text = "Exercises: \(exercises!.count )"
         cell.dateLabel.text = formattedDate

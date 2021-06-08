@@ -20,7 +20,15 @@ class PlanCreationViewController: UIViewController {
     @IBOutlet weak var scheduleDatePicker: UIDatePicker!
     
     var exercises = [[String]]()
+    var beginnerRoutine = [[String]]()
+    var intermediateRoutine = [[String]]()
+    var advancedRoutine = [[String]]()
     
+    var workoutLevel = ""
+    let dropDown = DropDown()
+    
+    var allExercises = [[[String]]]()
+    // Hardcoded exercise options
     let verticalPullingExercises = [["Jumping Pull-Up", "Negative PullUp"], ["Pull-Up", "Chin-Up", "Wide PullUp", "Narrow PullUp"], ["L-Sit PullUp", "High PullUp", "Archer PullUp", "TyperWriter PullUp"]]
     let horizontalPullingExercises = [["Incline Row", "Horizontal Row"], ["Wide Row", "Tucked Front Lever", "Archer Rows"], ["Tucked Front Lever PullUp"]]
     let verticalPushingExercises = [["Parallel Bar Support Hold", "Negative Dip"], ["Dip", "Pike Pushup"], ["Ring Dip", "Bulgarian Ring Dip", "Elevated Pike Pushup"]]
@@ -28,13 +36,6 @@ class PlanCreationViewController: UIViewController {
     let squatExercises = [["Squat"], ["Bulgarian Squat", "Cossack Squat"], ["Beginner Shrimp Squat", "Pistol Squat"]]
     let coreExercises = [["Plank"], ["Tucked Hanging Leg Raises", "Lying Leg Raises"], ["Pike Compressions", "V-Ups", "Tucked DragonFlag"]]
     let secCoreExercises = [["Reverse HyperExtension"],["Arch Raises", "Arch Body Hold"],["Arch Body Rocks"]]
-    
-    var beginnerRoutine = [[String]]()
-    var intermediateRoutine = [[String]]()
-    var advancedRoutine = [[String]]()
-    
-    var workoutLevel = ""
-    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,13 @@ class PlanCreationViewController: UIViewController {
         scheduleDatePicker.minimumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
         scheduleDatePicker.minuteInterval = 30
         
+        allExercises.append(verticalPullingExercises)
+        allExercises.append(horizontalPullingExercises)
+        allExercises.append(verticalPushingExercises)
+        allExercises.append(horizontalPushingExercises)
+        allExercises.append(squatExercises)
+        allExercises.append(coreExercises)
+        allExercises.append(secCoreExercises)
     }
     
     @IBAction func onBack(_ sender: Any) {
@@ -56,13 +64,13 @@ class PlanCreationViewController: UIViewController {
     
     @IBAction func chooseWorkoutLevel(_ sender: UIButton) {
         dropDown.dataSource = ["Beginner", "Intermediate", "Advanced"]
-            dropDown.anchorView = sender
-            dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
-            dropDown.show()
-            dropDown.selectionAction = { [weak self] (index: Int, item: String) in
-                guard let _ = self else {return}
-                self!.workoutLevel = item
-                self!.generateWorkout(level: item)
+        dropDown.anchorView = sender
+        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
+        dropDown.show()
+        dropDown.selectionAction = { [weak self] (index: Int, item: String) in
+            guard let _ = self else {return}
+            self!.workoutLevel = item
+            self!.generateWorkout(level: item)
             sender.setTitle(item, for: .normal)
         }
     }
@@ -91,8 +99,14 @@ class PlanCreationViewController: UIViewController {
         }
     }
     
+    func fillExercises(level:String) {
+        let level_idx:[String:Int] = ["Beginner": 0, "Intermediate": 1, "Advanced": 2]
+        
+    }
+    
     func generateWorkout(level: String) {
         exercises.removeAll()
+        
         switch level {
         case "Beginner":
             exercises.append([verticalPullingExercises[0][0], "3", "5"])
@@ -124,6 +138,7 @@ class PlanCreationViewController: UIViewController {
 
             break
         }
+        
         tableView.reloadData()
     }
     
@@ -143,7 +158,6 @@ extension PlanCreationViewController: UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddExerciseCell")!
 
             return cell
-            
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell") as! ExerciseCell
                 

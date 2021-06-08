@@ -13,7 +13,6 @@ class ExerciseCell: UITableViewCell {
     @IBOutlet weak var chooseSetsBtn: UIButton!
     @IBOutlet weak var chooseRepsBtn: UIButton!
     
-    
     let dropDown = DropDown()
     
     override func awakeFromNib() {
@@ -31,8 +30,6 @@ class ExerciseCell: UITableViewCell {
         }
     }
 
-    
-    
     @IBAction func onTapChooseReps(_ sender: UIButton) {
         dropDown.dataSource = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
         dropDown.anchorView = sender

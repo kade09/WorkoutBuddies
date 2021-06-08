@@ -10,7 +10,7 @@ import Parse
 import AlamofireImage
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var sugguestionsCollectionView: UICollectionView!
+    @IBOutlet weak var suggestionsCollectionView: UICollectionView!
     @IBOutlet weak var workoutsCollectionView: UICollectionView!
 
     var mates = [PFObject]()
@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sugguestionsCollectionView.delegate = self
-        sugguestionsCollectionView.dataSource = self
+        suggestionsCollectionView.delegate = self
+        suggestionsCollectionView.dataSource = self
         
         workoutsCollectionView.delegate = self
         workoutsCollectionView.dataSource = self
@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         query!.limit = 20
         let users = try! query?.findObjects()
         mates = users!
-        sugguestionsCollectionView.reloadData()
+        suggestionsCollectionView.reloadData()
     }
     
     func getWorkouts() {
@@ -84,50 +84,58 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == sugguestionsCollectionView {
+        if collectionView == suggestionsCollectionView {
             return mates.count
+        }else {
+            return otherWorkouts.count
         }
-        return otherWorkouts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == sugguestionsCollectionView {
+        if collectionView == suggestionsCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomBuddyCell", for: indexPath) as! RandomBuddyCell
             let mate = mates[indexPath.row] as! PFUser
             
+            cell.backgroundColor = UIColor.yellow
             cell.usernameLabel.text = mate.username
             cell.nameLabel.text = mate["name"] as? String
             cell.levelLabel.text = mate["workoutLevel"] as? String
-            cell.backgroundColor = UIColor.lightGray
+            
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherWorkoutCell", for: indexPath) as! OtherWorkoutCell
+            let routine = otherWorkouts[indexPath.row]
+            
+            let author = routine["author"] as! PFUser
+            let date = routine["scheduledDate"] as? Date
+            let level = routine["workoutLevel"] as? String
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, h:mm a"
+            let formattedDate = dateFormatter.string(from: date!)
+            
+            cell.backgroundColor = UIColor.yellow
+            cell.nameLabel.text = (routine["name"] as? String) ?? "Name Not Found"
+            cell.dateLabel.text = formattedDate
+            cell.levelLabel.text = level
+            cell.authorLabel.text = author.username ?? "404 Not Found"
+            //
             
             return cell
         }
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherWorkoutCell", for: indexPath) as! OtherWorkoutCell
-        let routine = otherWorkouts[indexPath.row]
-        
-        let author = routine["author"] as! PFUser
-        let date = routine["scheduledDate"] as? Date
-        let level = routine["workoutLevel"] as? String
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, h:mm a"
-        let formattedDate = dateFormatter.string(from: date!)
-        
-        cell.backgroundColor = UIColor.lightGray
-        cell.nameLabel.text = routine["name"] as? String
-        cell.dateLabel.text = formattedDate
-        cell.numExercisesLabel.text = level
-        cell.authorLabel.text = author.username
-        
-        return cell
     }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = 130
-        let cellHeight = 128
-        return CGSize(width: cellWidth, height: cellHeight)
+        if collectionView == suggestionsCollectionView {
+//            let cellWidth = 130
+//            let cellHeight = 128
+            return CGSize(width: 130, height: 125)
+        }else {
+            return CGSize(width: 140, height: 140)
+        }
+       
     }
 }
