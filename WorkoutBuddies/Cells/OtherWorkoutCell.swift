@@ -10,7 +10,7 @@ import UIKit
 class OtherWorkoutCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var numExercisesLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     
 }

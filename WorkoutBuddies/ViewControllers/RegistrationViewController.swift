@@ -14,7 +14,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     
-    var workoutLevel: String!
+    var workoutLevel: String! = "Beginner"
     let dropDown = DropDown()
     
     override func viewDidLoad() {
@@ -25,22 +25,25 @@ class RegistrationViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    // Choose level from Dropdown list
     @IBAction func tapChooseWorkoutLevel(_ sender: UIButton) {
         dropDown.dataSource = ["Beginner", "Intermediate", "Advanced"]
-            dropDown.anchorView = sender
-            dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
-            dropDown.show()
-            dropDown.selectionAction = { [weak self] (index: Int, item: String) in
-                guard let _ = self else {return}
-                self!.workoutLevel = item
+        dropDown.anchorView = sender
+        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height)
+        dropDown.show()
+        dropDown.selectionAction = {
+            [weak self] (index: Int, item: String) in guard let _ = self else {return}
+            self!.workoutLevel = item
             sender.setTitle(item, for: .normal)
         }
     }
     
+    // Back button
     @IBAction func onBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Create button
     @IBAction func onCreateAccount(_ sender: Any) {
         let username = usernameTextField.text!
         let password = passwordTextField.text!

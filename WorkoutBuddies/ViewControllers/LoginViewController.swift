@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    // Login Button
     @IBAction func onLogin(_ sender: Any) {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
