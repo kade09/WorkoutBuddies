@@ -1,4 +1,4 @@
-WorkoutBuddies - README
+WorkoutBuddies/Matexercise - README
 ===
 
 ## Table of Contents
