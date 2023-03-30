@@ -21,9 +21,7 @@ WorkoutBuddies is a workout app that pairs similar-leveled users and creates a w
 
 ## Product Spec
 
-### 1. User Stories (Required and Optional)
-
-**Required Must-have Stories**
+### 1. User Stories 
 
 * [x] User can create an account, login and out
 * [x] User can select their level of expertise
@@ -103,9 +101,6 @@ WorkoutBuddies is a workout app that pairs similar-leveled users and creates a w
 ## Wireframes
 <img src="https://raw.githubusercontent.com/lmxtiger/Codepath-APP-2020-Fall/main/Image%20from%20iOS.jpg" width=800>
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
 
 ## Schema 
 Workout Plan Schema
